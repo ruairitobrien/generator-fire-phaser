@@ -1,4 +1,4 @@
-# generator-fire-phaser [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-fire-phaser [![NPM version][npm-image]][npm-url] [ ![Codeship Status for ruairitobrien/generator-fire-phaser](https://app.codeship.com/projects/81ba7c80-8699-0134-9909-6a0fea6e4973/status?branch=master)](https://app.codeship.com/projects/183488) [![Dependency Status][daviddm-image]][daviddm-url]
 > Generator for simple phaser starter project.
 
 ## Installation
@@ -27,12 +27,7 @@ yo fire-phaser
 
 unlicense © [Ruairi O&#39;Brien](http://ruairitobrien.github.io/)
 
-
 [npm-image]: https://badge.fury.io/js/generator-fire-phaser.svg
 [npm-url]: https://npmjs.org/package/generator-fire-phaser
-[travis-image]: https://travis-ci.org/ruairitobrien/generator-fire-phaser.svg?branch=master
-[travis-url]: https://travis-ci.org/ruairitobrien/generator-fire-phaser
 [daviddm-image]: https://david-dm.org/ruairitobrien/generator-fire-phaser.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/ruairitobrien/generator-fire-phaser
-[coveralls-image]: https://coveralls.io/repos/ruairitobrien/generator-fire-phaser/badge.svg
-[coveralls-url]: https://coveralls.io/r/ruairitobrien/generator-fire-phaser

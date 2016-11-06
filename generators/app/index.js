@@ -24,13 +24,17 @@ module.exports = yeoman.Base.extend({
       name: 'author',
       message: 'Name of the author.',
       default: 'Dr Who'
+    }, {
+      type: String,
+      name: 'gameName',
+      message: 'Name of the game.',
+      default: 'Not sure yet... 2'
     }];
 
     return this.prompt(prompts).then(function (props) {
       this.props = props;
     }.bind(this));
   },
-
   writing: {
     packageJSON: function () {
       this.fs.copyTpl(
@@ -70,6 +74,16 @@ module.exports = yeoman.Base.extend({
       this.fs.copy(
         this.templatePath('npmrc'),
         this.destinationPath('.npmrc')
+      );
+    },
+    readme: function () {
+      this.fs.copyTpl(
+        this.templatePath('_README.md'),
+        this.destinationPath('README.md'),
+        {
+          gameName: this.props.gameName,
+          description: this.props.description
+        }
       );
     },
     webpack: function () {

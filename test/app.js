@@ -23,6 +23,7 @@ describe('generator-fire-phaser:app', function () {
       '.npmrc',
       'package.json',
       'phaserResolve.js',
+      'README.md',
       'webpack.config.js',
       'webpack.production.config.js',
       'www/index.html',
