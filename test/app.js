@@ -28,8 +28,9 @@ describe('generator-fire-phaser:app', function () {
       'webpack.production.config.js',
       'www/index.html',
       'src/game.js',
-      'src/states/MainState.js',
-      'src/objects/RainbowText.js'
+      'src/states/GameState.js',
+      'src/objects/ScoreText.js',
+      'src/sprites/Dude.js'
     ]);
   });
 });

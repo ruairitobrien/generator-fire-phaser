@@ -107,19 +107,27 @@ module.exports = yeoman.Base.extend({
         this.templatePath('www/index.html'),
         this.destinationPath('www/index.html')
       );
+      this.fs.copy(
+        this.templatePath('www/assets'),
+        this.destinationPath('www/assets')
+      );
     },
     src: function () {
       this.fs.copyTpl(
-        this.templatePath('src/_game.js'),
+        this.templatePath('src/game.js'),
         this.destinationPath('src/game.js')
       );
       this.fs.copyTpl(
-        this.templatePath('src/states/_MainState.js'),
-        this.destinationPath('src/states/MainState.js')
+        this.templatePath('src/states/GameState.js'),
+        this.destinationPath('src/states/GameState.js')
       );
       this.fs.copyTpl(
-        this.templatePath('src/objects/_RainbowText.js'),
-        this.destinationPath('src/objects/RainbowText.js')
+        this.templatePath('src/objects/ScoreText.js'),
+        this.destinationPath('src/objects/ScoreText.js')
+      );
+      this.fs.copyTpl(
+        this.templatePath('src/sprites/Dude.js'),
+        this.destinationPath('src/sprites/Dude.js')
       );
     }
   }
