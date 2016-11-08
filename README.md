@@ -3,14 +3,14 @@
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-fire-phaser using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-fire-phaser using [npm](https://www.npmjs.com/) (this assumes you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
 npm install -g generator-fire-phaser
 ```
 
-Then generate your new project:
+Then generate your new project on the command line in your current directory:
 
 ```bash
 yo fire-phaser
