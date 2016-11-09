@@ -103,9 +103,12 @@ module.exports = yeoman.Base.extend({
       );
     },
     www: function () {
-      this.fs.copy(
-        this.templatePath('www/index.html'),
-        this.destinationPath('www/index.html')
+      this.fs.copyTpl(
+        this.templatePath('www/_index.html'),
+        this.destinationPath('www/index.html'),
+        {
+          gameName: this.props.gameName
+        }
       );
       this.fs.copy(
         this.templatePath('www/assets'),
