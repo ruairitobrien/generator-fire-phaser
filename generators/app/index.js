@@ -116,6 +116,10 @@ module.exports = yeoman.Base.extend({
       );
     },
     src: function () {
+      this.fs.copy(
+        this.templatePath('src/game.css'),
+        this.destinationPath('src/game.css')
+      );
       this.fs.copyTpl(
         this.templatePath('src/game.js'),
         this.destinationPath('src/game.js')

@@ -1,10 +1,10 @@
-import {Sprite} from 'phaser'
+import {Sprite} from 'phaser';
 
 class Dude extends Sprite {
 
     constructor ({ game, x, y, asset }) {
         super(game, x, y, asset);
-        this.anchor.setTo(0.5)
+        this.anchor.setTo(0.5);
     }
 
     init() {

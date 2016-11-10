@@ -1,5 +1,5 @@
 import {State, Physics} from 'phaser';
-import Dude from '../sprites/Dude'
+import Dude from '../sprites/Dude';
 import ScoreText from '../objects/ScoreText';
 
 class GameState extends State {
