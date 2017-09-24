@@ -1,5 +1,5 @@
 var path = require('path');
-var phaserBuildPath = path.dirname(require.resolve('phaser'));
+var phaserBuildPath = path.dirname(require.resolve('phaser-ce'));
 var custom = path.join(phaserBuildPath, 'custom');
 
 var phaserJs = 'phaser-split.js';
@@ -28,8 +28,8 @@ module.exports = {
    * variables.
    */
   loaders: [
-    { test: new RegExp(phaserJs), loader: 'expose?Phaser' },
-    { test: new RegExp(pixiiJs), loader: 'expose?PIXI' },
-    { test: new RegExp(p2Js), loader: 'expose?p2' }
+    {test: new RegExp(phaserJs), loader: 'expose-loader?Phaser'},
+    {test: new RegExp(pixiiJs), loader: 'expose-loader?PIXI'},
+    {test: new RegExp(p2Js), loader: 'expose-loader?p2'}
   ]
-}
+};
