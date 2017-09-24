@@ -40,108 +40,99 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    return {
-      packageJSON: function () {
-        this.fs.copyTpl(
-          this.templatePath('_package.json'),
-          this.destinationPath('package.json'),
-          {
-            projectName: this.props.projectName,
-            description: this.props.description,
-            author: this.props.author
-          }
-        );
-      },
-      babel: function () {
-        this.fs.copy(
-          this.templatePath('babelrc'),
-          this.destinationPath('.babelrc')
-        );
-      },
-      git: function () {
-        this.fs.copy(
-          this.templatePath('gitignore'),
-          this.destinationPath('.gitignore')
-        );
-
-        this.fs.copy(
-          this.templatePath('gitattributes'),
-          this.destinationPath('.gitattributes')
-        );
-      },
-      editorconfig: function () {
-        this.fs.copy(
-          this.templatePath('editorconfig'),
-          this.destinationPath('.editorconfig')
-        );
-      },
-      npmrc: function () {
-        this.fs.copy(
-          this.templatePath('npmrc'),
-          this.destinationPath('.npmrc')
-        );
-      },
-      readme: function () {
-        this.fs.copyTpl(
-          this.templatePath('_README.md'),
-          this.destinationPath('README.md'),
-          {
-            gameName: this.props.gameName,
-            description: this.props.description
-          }
-        );
-      },
-      webpack: function () {
-        this.fs.copy(
-          this.templatePath('webpack.config.js'),
-          this.destinationPath('webpack.config.js')
-        );
-        this.fs.copy(
-          this.templatePath('webpack.production.config.js'),
-          this.destinationPath('webpack.production.config.js')
-        );
-      },
-      phaserResolve: function () {
-        this.fs.copy(
-          this.templatePath('phaserResolve.js'),
-          this.destinationPath('phaserResolve.js')
-        );
-      },
-      www: function () {
-        this.fs.copyTpl(
-          this.templatePath('www/_index.html'),
-          this.destinationPath('www/index.html'),
-          {
-            gameName: this.props.gameName
-          }
-        );
-        this.fs.copy(
-          this.templatePath('www/assets'),
-          this.destinationPath('www/assets')
-        );
-      },
-      src: function () {
-        this.fs.copy(
-          this.templatePath('src/game.css'),
-          this.destinationPath('src/game.css')
-        );
-        this.fs.copyTpl(
-          this.templatePath('src/game.js'),
-          this.destinationPath('src/game.js')
-        );
-        this.fs.copyTpl(
-          this.templatePath('src/states/GameState.js'),
-          this.destinationPath('src/states/GameState.js')
-        );
-        this.fs.copyTpl(
-          this.templatePath('src/objects/ScoreText.js'),
-          this.destinationPath('src/objects/ScoreText.js')
-        );
-        this.fs.copyTpl(
-          this.templatePath('src/sprites/Dude.js'),
-          this.destinationPath('src/sprites/Dude.js')
-        );
+    this.fs.copyTpl(
+      this.templatePath('_package.json'),
+      this.destinationPath('package.json'),
+      {
+        projectName: this.props.projectName,
+        description: this.props.description,
+        author: this.props.author
       }
-    };
+    );
+
+    this.fs.copy(
+      this.templatePath('babelrc'),
+      this.destinationPath('.babelrc')
+    );
+
+    this.fs.copy(
+      this.templatePath('gitignore'),
+      this.destinationPath('.gitignore')
+    );
+
+    this.fs.copy(
+      this.templatePath('gitattributes'),
+      this.destinationPath('.gitattributes')
+    );
+
+    this.fs.copy(
+      this.templatePath('editorconfig'),
+      this.destinationPath('.editorconfig')
+    );
+
+    this.fs.copy(
+      this.templatePath('npmrc'),
+      this.destinationPath('.npmrc')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_README.md'),
+      this.destinationPath('README.md'),
+      {
+        gameName: this.props.gameName,
+        description: this.props.description
+      }
+    );
+
+    this.fs.copy(
+      this.templatePath('webpack.config.js'),
+      this.destinationPath('webpack.config.js')
+    );
+    this.fs.copy(
+      this.templatePath('webpack.production.config.js'),
+      this.destinationPath('webpack.production.config.js')
+    );
+
+    this.fs.copy(
+      this.templatePath('phaserResolve.js'),
+      this.destinationPath('phaserResolve.js')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('www/_index.html'),
+      this.destinationPath('www/index.html'),
+      {
+        gameName: this.props.gameName
+      }
+    );
+
+    this.fs.copy(
+      this.templatePath('www/assets'),
+      this.destinationPath('www/assets')
+    );
+
+    this.fs.copy(
+      this.templatePath('src/game.css'),
+      this.destinationPath('src/game.css')
+    );
+    this.fs.copyTpl(
+      this.templatePath('src/game.js'),
+      this.destinationPath('src/game.js')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('src/states/GameState.js'),
+      this.destinationPath('src/states/GameState.js')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('src/objects/ScoreText.js'),
+      this.destinationPath('src/objects/ScoreText.js')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('src/sprites/Dude.js'),
+      this.destinationPath('src/sprites/Dude.js')
+    );
   }
 };
