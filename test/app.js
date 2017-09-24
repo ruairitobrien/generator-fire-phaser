@@ -4,17 +4,16 @@ var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
 
 describe('generator-fire-phaser:app', function () {
-  before(function () {
+  before(() => {
     return helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         projectName: 'test-project',
         description: 'What a game!',
         author: 'Some One'
-      })
-      .toPromise();
+      });
   });
 
-  it('creates files', function () {
+  it('creates files', () => {
     assert.file([
       '.babelrc',
       '.editorconfig',
