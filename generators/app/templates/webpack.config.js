@@ -24,7 +24,7 @@ module.exports = {
         use: {
           loader: 'json'
         }
-      },
+      }
     ].concat(resolvedPhaser.rules)
   },
   resolve: {
