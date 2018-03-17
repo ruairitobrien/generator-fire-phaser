@@ -16,7 +16,7 @@ or if you use [yarn](https://github.com/yarnpkg/yarn)
 
 For all following commands, you can just replace `npm` with `yarn` if yarn is what you are using.
 
-To build and run the application in a development server:
+To build and run the application in a development server (note: the first time takes a while but it's much faster after that):
 
 `npm start`
 

@@ -47,5 +47,5 @@
     "prepublish": "gulp prepublish",
     "test": "gulp"
   },
-  "license": "unlicense"
+  "license": "Unlicense"
 }

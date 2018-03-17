@@ -27,9 +27,9 @@ module.exports = {
    * The https://github.com/webpack/expose-loader plugin is used to bind the required
    * variables.
    */
-  loaders: [
-    {test: new RegExp(phaserJs), loader: 'expose-loader?Phaser'},
-    {test: new RegExp(pixiiJs), loader: 'expose-loader?PIXI'},
-    {test: new RegExp(p2Js), loader: 'expose-loader?p2'}
+  rules: [
+    {test: new RegExp(phaserJs), use: {loader: 'expose-loader?Phaser'}},
+    {test: new RegExp(pixiiJs), use: {loader: 'expose-loader?PIXI'}},
+    {test: new RegExp(p2Js), use: {loader: 'expose-loader?p2'}}
   ]
 };

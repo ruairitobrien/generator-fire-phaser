@@ -1,36 +1,39 @@
-var webpack = require('webpack');
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 var resolvedPhaser = require('./phaserResolve');
 
-var baseDir = __dirname + '/www';
-var browserSyncConfig = {
-  host: process.env.IP || 'localhost',
-  port: process.env.PORT || 3000,
-  server: {
-    baseDir: baseDir
-  }
-};
-
 module.exports = {
-  devtool: 'eval-source-map',
-  entry: './src/game.js',
-  output: {
-    path: baseDir,
-    filename: 'game.js'
-  },
-  watch: true,
-  plugins: [
-    new webpack.NoEmitOnErrorsPlugin(),
-    new BrowserSyncPlugin(browserSyncConfig)
-  ],
+  mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
   module: {
-    loaders: [
-      {test: /\.css$/, loader: 'style-loader!css-loader'},
-      {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
-      {test: /\.json$/, loader: 'json'}
-    ].concat(resolvedPhaser.loaders)
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' }
+        ]
+      },
+      {
+        test: /\.json$/,
+        use: {
+          loader: 'json'
+        }
+      },
+    ].concat(resolvedPhaser.rules)
   },
   resolve: {
     alias: resolvedPhaser.paths
-  }
+  },
+  performance: {
+    hints: false
+  },
+  plugins: [
+    new HtmlWebpackPlugin()
+  ]
 };

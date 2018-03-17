@@ -51,6 +51,11 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
+      this.templatePath('LICENSE'),
+      this.destinationPath('LICENSE')
+    );
+
+    this.fs.copy(
       this.templatePath('babelrc'),
       this.destinationPath('.babelrc')
     );
@@ -88,22 +93,10 @@ module.exports = class extends Generator {
       this.templatePath('webpack.config.js'),
       this.destinationPath('webpack.config.js')
     );
-    this.fs.copy(
-      this.templatePath('webpack.production.config.js'),
-      this.destinationPath('webpack.production.config.js')
-    );
 
     this.fs.copy(
       this.templatePath('phaserResolve.js'),
       this.destinationPath('phaserResolve.js')
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('www/_index.html'),
-      this.destinationPath('www/index.html'),
-      {
-        gameName: this.props.gameName
-      }
     );
 
     this.fs.copy(
@@ -116,8 +109,8 @@ module.exports = class extends Generator {
       this.destinationPath('src/game.css')
     );
     this.fs.copyTpl(
-      this.templatePath('src/game.js'),
-      this.destinationPath('src/game.js')
+      this.templatePath('src/index.js'),
+      this.destinationPath('src/index.js')
     );
 
     this.fs.copyTpl(
