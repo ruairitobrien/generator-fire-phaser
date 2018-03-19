@@ -100,8 +100,8 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
-      this.templatePath('www/assets'),
-      this.destinationPath('www/assets')
+      this.templatePath('assets'),
+      this.destinationPath('assets')
     );
 
     this.fs.copy(

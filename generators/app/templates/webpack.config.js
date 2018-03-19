@@ -1,4 +1,5 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var resolvedPhaser = require('./phaserResolve');
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         }
       },
       {
@@ -24,7 +25,7 @@ module.exports = {
         use: {
           loader: 'json'
         }
-      }
+      },
     ].concat(resolvedPhaser.rules)
   },
   resolve: {
@@ -34,6 +35,9 @@ module.exports = {
     hints: false
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin(),
+    new CopyWebpackPlugin([
+      { from: 'assets/**/*' }
+    ], {})
   ]
 };
